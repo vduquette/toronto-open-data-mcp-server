@@ -13,6 +13,27 @@ An MCP (Model Context Protocol) server that provides direct access to Toronto's 
 
 ## Installation
 
+### Option 1: Using uvx (Recommended for MCP)
+The easiest way to use this server with Claude Desktop or other MCP clients:
+
+```bash
+# No installation needed! uvx will handle everything
+# Just use in your Claude Desktop configuration:
+uvx toronto-open-data-mcp-server
+```
+
+### Option 2: Traditional Installation
+1. **Install from PyPI**:
+   ```bash
+   pip install toronto-open-data-mcp-server
+   ```
+
+2. **Run the server**:
+   ```bash
+   toronto-open-data-mcp-server
+   ```
+
+### Option 3: Development Installation
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/toronto-open-data-mcp-server.git
@@ -32,6 +53,49 @@ An MCP (Model Context Protocol) server that provides direct access to Toronto's 
    ```bash
    python main.py
    ```
+
+## Claude Desktop Configuration
+
+### Using uvx (Easiest Method)
+Add this to your Claude Desktop configuration (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+
+```json
+{
+  "mcpServers": {
+    "Toronto Open Data Server": {
+      "command": "uvx",
+      "args": ["toronto-open-data-mcp-server"]
+    }
+  }
+}
+```
+
+### Using uv (Alternative)
+If you prefer using uv directly:
+
+```json
+{
+  "mcpServers": {
+    "Toronto Open Data Server": {
+      "command": "uv",
+      "args": ["tool", "run", "toronto-open-data-mcp-server"]
+    }
+  }
+}
+```
+
+### Traditional Installation
+If you've installed the package globally:
+
+```json
+{
+  "mcpServers": {
+    "Toronto Open Data Server": {
+      "command": "toronto-open-data-mcp-server"
+    }
+  }
+}
+```
 
 ## Usage
 

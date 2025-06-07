@@ -3,9 +3,9 @@ name = "toronto-open-data-mcp-server"
 version = "0.1.0"
 description = "MCP server for accessing Toronto Open Data through the CKAN API"
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
-    { name = "Your Name", email = "your.email@example.com" }
+    { name = "Vince Duquette"}
 ]
 keywords = ["mcp", "toronto", "open-data", "ckan", "api"]
 classifiers = [
@@ -20,6 +20,9 @@ requires-python = ">=3.10"
 dependencies = [
     "mcp[cli]>=1.9.0",
 ]
+
+[project.scripts]
+toronto-open-data-mcp-server = "main:main"
 
 [project.urls]
 "Homepage" = "https://github.com/yourusername/toronto-open-data-mcp-server"

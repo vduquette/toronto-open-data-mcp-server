@@ -635,5 +635,9 @@ def toronto_fetch_csv_data(csv_url: str, max_lines: Optional[int] = 50) -> str:
     except Exception as e:
         return f"❌ Error: An unexpected error occurred while fetching CSV: {str(e)}"
 
+def main():
+    """Entry point for the MCP server"""
+    mcp.run()
+
 if __name__ == "__main__":
-    mcp.run() 
+    main() 
