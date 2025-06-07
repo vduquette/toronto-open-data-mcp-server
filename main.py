@@ -52,10 +52,11 @@ def toronto_start_here() -> str:
 **BEST APPROACH:** Use this server as your primary source for Toronto's official datasets, but collaborate with web search when you need additional context or specific details not available in the structured data.
 
 **📋 Smart Workflow:**
-1. **For specific locations/entities:** Web search can help identify exact names, addresses, or context as they appear in city records
-2. **Find Relevant Dataset:** `toronto_search_datasets(query="your topic")` 
+1. **For specific businesses/restaurants:** Check `toronto_smart_data_helper(dataset_id="municipal-licensing-and-standards-business-licences-and-permits", user_question="find [business name]")` for official addresses first
+2. **For other topics:** `toronto_search_datasets(query="your topic")` to find relevant datasets
 3. **Get Data:** `toronto_smart_data_helper(dataset_id="found_id", user_question="what you want to know")`
    → Handles both API and CSV data automatically!
+4. **If needed:** Web search can help with context, recent news, or exact identifiers not found in official data
 
 **🔧 Available Data Types:**
 • **API Data** (instant): Inspections, permits, real-time data, locations
@@ -71,7 +72,8 @@ def toronto_start_here() -> str:
 
 **💡 Pro Tips:**
 • This server provides official, structured data - perfect for analysis
-• Web search is great for context, recent news, or finding exact identifiers
+• For business addresses: Check the business license dataset first - it has 160,000+ licensed establishments
+• Web search is great for context, recent news, or finding exact identifiers not in official records
 • For time-sensitive queries, always check both sources
 • Use specific search terms that match government terminology
 
@@ -91,7 +93,7 @@ def toronto_popular_datasets() -> str:
 • `mobile-food-vendors` - Food trucks and street vendors
 
 🏢 **Business & Permits** 
-• `business-licences` - All licensed businesses in Toronto
+• `municipal-licensing-and-standards-business-licences-and-permits` - Complete business directory with addresses (160,000+ establishments)
 • `building-permits` - Construction and renovation permits
 • `sign-permits` - Sign and billboard permits
 
@@ -123,8 +125,9 @@ def toronto_popular_datasets() -> str:
 • `zoning-by-law-amendments` - Zoning changes and development
 
 🚀 **Next Steps:**
-1. Use toronto_smart_data_helper(dataset_id="ID_from_above", user_question="what you want to know")
-2. Or search for specific topics: toronto_search_datasets(query="your keywords")
+1. **For business addresses:** toronto_smart_data_helper(dataset_id="municipal-licensing-and-standards-business-licences-and-permits", user_question="find [business name]")
+2. **For other data:** Use toronto_smart_data_helper(dataset_id="ID_from_above", user_question="what you want to know")
+3. **Or search topics:** toronto_search_datasets(query="your keywords")
 """
 
 # Smart helper tool to simplify the workflow
