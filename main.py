@@ -90,39 +90,61 @@ def toronto_popular_datasets() -> str:
 
 🍽️ **Food & Safety**
 • `dinesafe` - Restaurant inspections, health scores, violations
-• `mobile-food-vendors` - Food trucks and street vendors
+• `bodysafe` - Body art establishments (tattoo, piercing, etc.)
+
+🚨 **Crime & Safety**
+• `major-crime-indicators` - Assault, break & enter, robbery, theft, auto theft
+• `bicycle-thefts` - Stolen bicycle reports with locations
+• `theft-from-motor-vehicle` - Vehicle break-in incidents
 
 🏢 **Business & Permits** 
 • `municipal-licensing-and-standards-business-licences-and-permits` - Complete business directory with addresses (160,000+ establishments)
-• `building-permits` - Construction and renovation permits
-• `sign-permits` - Sign and billboard permits
+• `building-permits-active-permits` - Active construction and renovation permits
+• `building-permits-cleared-permits` - Completed construction permits
 
 🚦 **Transportation & Traffic**
-• `traffic-signals` - Traffic light locations and timing
-• `traffic-volumes` - Traffic count data on major roads
+• `traffic-signals-tabular` - Traffic light locations and timing
+• `traffic-volumes-at-intersections-for-all-modes` - Traffic count data at intersections
+• `motor-vehicle-collisions-involving-killed-or-seriously-injured-persons` - Serious traffic accidents
+• `parking-tickets` - Parking violation tickets (2.8M annually)
 • `ttc-routes-and-schedules` - Public transit routes and stops
 • `cycling-network` - Bike lanes and cycling infrastructure
 
 🏛️ **City Services & Facilities**
-• `parks-facilities` - Parks, pools, rinks, community centers
+• `parks-and-recreation-facilities` - Parks, pools, rinks, community centers
 • `library-branch-general-information` - Public library locations
 • `fire-station-locations` - Fire stations and emergency services
-• `polling-locations` - Voting locations for elections
+• `ambulance-station-locations` - Ambulance and EMS stations
+• `311-service-requests-customer-initiated` - Citizen service requests and complaints
+• `elections-voting-locations` - Voting locations for elections
+• `city-of-toronto-free-public-wifi` - Free WiFi hotspot locations
 
 💰 **Finance & Budget**
-• `budget-operating` - City operating budget details
-• `budget-capital` - Capital projects and spending
-• `property-tax-rates` - Tax rates by property type
+• `budget-operating-budget-program-summary-by-expenditure-category` - City operating budget details
+• `toronto-police-budget` - Police budget and spending
+• `current-value-assessment-cva-tax-impact-residential-properties` - Property tax impacts
 
 🌡️ **Environment & Weather**
 • `rain-gauge-locations-and-precipitation` - Weather and rainfall data
-• `air-quality-health-index` - Air quality measurements
-• `green-bins-collection` - Waste collection schedules
+• `toronto-beaches-water-quality` - Beach water quality measurements
+• `solid-waste-pickup-schedule` - Waste collection schedules
+• `city-operated-electric-vehicle-charging-station-map` - Public EV charging stations
 
-🏠 **Housing & Development**
+🏠 **Housing & Shelter**
+• `daily-shelter-occupancy` - Daily shelter capacity and occupancy data
+• `toronto-shelter-system-flow` - Shelter admissions, discharges, and outcomes
+• `toronto-community-housing-data` - Public housing information
+
+📊 **Demographics & Health**
 • `neighbourhood-profiles` - Demographics by neighborhood  
-• `wellbeing-toronto` - Community health and social indicators
-• `zoning-by-law-amendments` - Zoning changes and development
+• `wellbeing-toronto-demographics` - Community health and social indicators
+• `covid-19-cases-in-toronto` - COVID-19 case data and trends
+• `neighbourhood-crime-rates` - Crime statistics by neighborhood
+• `development-applications` - Development applications and permits
+
+🚨 **Emergency Services**
+• `fire-incidents` - Fire department emergency responses
+• `ambulance-station-locations` - EMS station locations and coverage
 
 🚀 **Next Steps:**
 1. **For business addresses:** toronto_smart_data_helper(dataset_id="municipal-licensing-and-standards-business-licences-and-permits", user_question="find [business name]")
