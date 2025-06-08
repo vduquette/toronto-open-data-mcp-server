@@ -14,26 +14,19 @@ An MCP (Model Context Protocol) server that provides direct access to Toronto's 
 ## Installation
 
 ### Option 1: Using uvx (Recommended for MCP)
-The easiest way to use this server with Claude Desktop or other MCP clients:
+The easiest way to use this server with any MCP client:
+
+```bash
+brew install uv
+```
 
 ```bash
 # No installation needed! uvx will handle everything
-# Just use in your Claude Desktop configuration:
+# Just use in your MCP client configuration:
 uvx toronto-open-data-mcp-server
 ```
 
-### Option 2: Traditional Installation
-1. **Install from PyPI**:
-   ```bash
-   pip install toronto-open-data-mcp-server
-   ```
-
-2. **Run the server**:
-   ```bash
-   toronto-open-data-mcp-server
-   ```
-
-### Option 3: Development Installation
+### Option 2: Development Installation
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/toronto-open-data-mcp-server.git
@@ -54,10 +47,10 @@ uvx toronto-open-data-mcp-server
    python main.py
    ```
 
-## Claude Desktop Configuration
+## MCP Client Configuration
 
 ### Using uvx (Easiest Method)
-Add this to your Claude Desktop configuration (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+Add this to your MCP client configuration:
 
 ```json
 {
@@ -70,32 +63,11 @@ Add this to your Claude Desktop configuration (`~/Library/Application Support/Cl
 }
 ```
 
-### Using uv (Alternative)
-If you prefer using uv directly:
+### Configuration File Locations
+- **Claude Desktop**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Cursor**: Check Cursor's MCP documentation for config location
+- **Other MCP clients**: Refer to your client's documentation
 
-```json
-{
-  "mcpServers": {
-    "Toronto Open Data Server": {
-      "command": "uv",
-      "args": ["tool", "run", "toronto-open-data-mcp-server"]
-    }
-  }
-}
-```
-
-### Traditional Installation
-If you've installed the package globally:
-
-```json
-{
-  "mcpServers": {
-    "Toronto Open Data Server": {
-      "command": "toronto-open-data-mcp-server"
-    }
-  }
-}
-```
 
 ## Usage
 
@@ -165,50 +137,6 @@ python run_tests.py --integration
 
 # Run all tests (unit + integration)
 python run_tests.py --all
-```
-
-#### Direct pytest Commands
-
-```bash
-# Unit tests only (excludes integration tests)
-pytest test_toronto_mcp.py -m "not integration"
-
-# Integration tests only (hits real API)
-pytest test_toronto_mcp.py -m "integration"
-
-# All tests
-pytest test_toronto_mcp.py test_workflows.py
-
-# With coverage
-pytest --cov=main --cov-report=html test_toronto_mcp.py
-```
-
-### Test Structure
-
-- **`test_toronto_mcp.py`** - Core unit and integration tests
-  - `TestMakeApiRequest` - API request functionality
-  - `TestTorontoSearchDatasets` - Dataset search functionality  
-  - `TestTorontoSmartDataHelper` - Smart helper functionality
-  - `TestIntegration` - Integration tests with real API
-  
-- **`test_workflows.py`** - End-to-end workflow tests
-  - `TestCommonWorkflows` - Typical user workflows
-  - `TestErrorScenarios` - Error handling
-  - `TestUserStories` - Complete user stories
-
-### Test Categories
-
-- **Unit Tests**: Fast tests with mocked API calls (default)
-- **Integration Tests**: Tests that hit the real Toronto Open Data API
-- **Workflow Tests**: End-to-end scenarios demonstrating common usage patterns
-
-### Coverage
-
-Run tests with coverage to see how much of the code is tested:
-
-```bash
-python run_tests.py --coverage
-# View report: open htmlcov/index.html
 ```
 
 ## API Reference
